@@ -1,14 +1,14 @@
 % written by Po-Nan Li @Academia Sinica
 % v.1 2014/06/10 
 
-function [particle_no, file_no, euler, c] = read_euler_function(filename)
+function [particle_no, file_no, euler, c] = read_euler_from_lst(filename)
 
 fid = fopen(filename);
 
 firstline = textscan(fid, '%s', 1);
 firstline = firstline{1};
-fclose(fid);
-fid = fopen(filename);
+frewind(fid)
+
 
 if strcmp(firstline, '#LSX')
     pattern = '%d	../particles/%d_dn.shrink-1.hdf	euler=%f,%f,%f %s';
