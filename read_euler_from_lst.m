@@ -7,8 +7,7 @@ fid = fopen(filename);
 
 firstline = textscan(fid, '%s', 1);
 firstline = firstline{1};
-frewind(fid)
-
+frewind(fid);
 
 if strcmp(firstline, '#LSX')
     pattern = '%d	../particles/%d_dn.shrink-1.hdf	euler=%f,%f,%f %s';
